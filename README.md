@@ -1,11 +1,14 @@
 # TypeScript Terminal Game Lab
 
-This project was built to complete the **Practice** section of the TypeScript "Everyday Types" lesson.  
-It is a terminal-based number guessing game written in TypeScript, using classes, interfaces, and explicit type annotations throughout.
+## 🎯 Purpose
+
+This project was built to practice applying TypeScript fundamentals after thoroughly completing the official documentation lessons.
+
+It’s a simple, terminal-based number guessing game. My favorite part of working with TypeScript is seeing the compiled `.js` file generated from the `.ts` source — I love how TypeScript’s syntax adds clarity while still producing clean, readable JavaScript under the hood.
 
 ---
 
-##  Related Lessons From TypeScript Documentation
+## 📚 Related Lessons from TypeScript Documentation
 
 - [Intro to TypeScript Lesson](https://github.com/ajungers-ga/typescript-intro-node)
 - [TypeScript Everyday Types Lesson](https://github.com/ajungers-ga/typescript-everyday-types)
