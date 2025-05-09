@@ -52,8 +52,17 @@ class NumberGuessingGame {
         console.log("Thanks for playing.");
     }
 }
-// 6. Prompt for player name and initialize game
-const playerName = prompt("Enter your name: ");
-const game = new NumberGuessingGame(playerName);
-// 7. Start the game
-game.start();
+// 6. Define a function to start and replay the game
+function runGame() {
+    const playerName = prompt("Enter your name: ");
+    let playAgain;
+    do {
+        const game = new NumberGuessingGame(playerName);
+        game.start();
+        playAgain = prompt("Would you like to play again? (y/n): ").toLowerCase();
+    } while (playAgain === 'y');
+    console.log("Goodbye.");
+}
+// 7. Kick off the game loop
+runGame();
+// 8–10. Reserved for future features (e.g., leaderboard, difficulty settings)

@@ -40,11 +40,11 @@ class NumberGuessingGame {
 
     while (this.attemptsLeft > 0) {
       const input: string = prompt(`Guess a number between 1 and 10 (${this.attemptsLeft} left): `);
-      const guess: number = parseInt(input);
+      const guess: number = parseInt(input); // use parseint because prompt returns a string
 
-      if (isNaN(guess) || guess < 1 || guess > 10) {
+      if (isNaN(guess) || guess < 1 || guess > 10) { // Nan = not a number, used to check if the user typed something that couldnt be converted to number
         console.log("Invalid input. Try a number between 1 and 10.");
-        continue;
+        continue; 
       }
 
       if (guess === this.secretNumber) {
@@ -69,11 +69,24 @@ class NumberGuessingGame {
   }
 }
 
-// 6. Prompt for player name and initialize game
-const playerName: string = prompt("Enter your name: ");
-const game = new NumberGuessingGame(playerName);
-
-// 7. Start the game
-game.start();
-
-
+// 6. Define a function to replay the game 
+///
+function runGame(): void { // wrapping the game and game restart logic into function runGame()
+    const playerName: string = prompt("Enter your name: ");
+    let playAgain: string;
+  
+    do { // while playAgain = yes, re inits the game each time from the beginning
+      const game = new NumberGuessingGame(playerName);
+      game.start();
+  
+      playAgain = prompt("Would you like to play again? (y/n): ").toLowerCase();
+    } while (playAgain === 'y');
+  
+    console.log("Goodbye.");
+  }
+  
+  // 7. Kick off the game loop
+  runGame();
+  
+ 
+  
